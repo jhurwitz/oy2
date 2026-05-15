@@ -733,7 +733,7 @@ export function registerOAuthRoutes(app: App) {
 			return c.json({
 				user: authUserPayload(existingUser),
 				claimed: true,
-				needsPasskeySetup: true,
+				needsPasskeySetup: passkeys.rows.length === 0,
 				sessionToken,
 			});
 		}
